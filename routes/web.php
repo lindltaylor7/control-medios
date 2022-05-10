@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ConsessionController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [ConsessionController::class, 'index'])->name('Home');
+Route::post('/insertCons', [ConsessionController::class, 'store'])->name('insertCons');
+Route::post('/searchCons', [ConsessionController::class, 'search'])->name('searchCons');
