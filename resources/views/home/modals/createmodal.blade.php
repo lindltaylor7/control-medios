@@ -1,4 +1,4 @@
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -10,6 +10,12 @@
             @csrf
             <label for="name">Ingrese el nombre</label>
             <input type="text" class="form-control" name="name" id="name">
+            <label for="type">Tipo de Medio</label>
+            <select name="type" id="type" class="form-select">
+              <option value="1">Radio</option>
+              <option value="2">Tv</option>
+              <option value="3">Telecomunicaciones</option>
+            </select>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>

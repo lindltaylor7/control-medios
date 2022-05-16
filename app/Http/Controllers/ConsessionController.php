@@ -14,7 +14,7 @@ class ConsessionController extends Controller
      */
     public function index()
     {
-        $conssesions = Consession::all();
+        $conssesions = Consession::paginate(5);
         return view('welcome', compact('conssesions'));
     }
 
@@ -71,9 +71,10 @@ class ConsessionController extends Controller
      * @param  \App\Models\Consession  $consession
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Consession $consession)
-    {
-        //
+    public function update(Request $request, $id)
+    {   
+        $consession = Consession::find($id)->update($request->all());
+        return redirect()->back();
     }
 
     /**
@@ -89,7 +90,7 @@ class ConsessionController extends Controller
 
     public function search(Request $request)
     {
-        $conssesions = Consession::where('name', 'like', '%'.$request->get('buscar').'%')->get();
+        $conssesions = Consession::where('name', 'like', '%'.$request->get('buscar').'%')->paginate(5);
         return view('welcome', compact('conssesions'));
     }
 }

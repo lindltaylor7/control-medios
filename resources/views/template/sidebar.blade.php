@@ -1,47 +1,58 @@
-<div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-secondary h-100" style="width: 280px;">
-    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-      <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
-      <span class="fs-4">Control de Medios</span>
+<nav class="navbar navbar-light navbar-vertical navbar-expand-xl">
+  <script>
+    var navbarStyle = localStorage.getItem("navbarStyle");
+    if (navbarStyle && navbarStyle !== 'transparent') {
+      document.querySelector('.navbar-vertical').classList.add(`navbar-${navbarStyle}`);
+    }
+  </script>
+  <div class="d-flex align-items-center">
+    <div class="toggle-icon-wrapper">
+      <button class="btn navbar-toggler-humburger-icon navbar-vertical-toggle" data-bs-toggle="tooltip" data-bs-placement="left" title="Interruptor"><span class="navbar-toggle-icon"><span class="toggle-line"></span></span></button>
+    </div>
+    <a class="navbar-brand" href="index.html">
+      <div class="d-flex align-items-center py-3"><span class="font-sans-serif">M.Perú</span>
+      </div>
     </a>
-    <hr>
-    <ul class="nav nav-pills flex-column mb-auto">
-      <li class="nav-item">
-        <a href="{{route('Home')}}" class="nav-link active" aria-current="page">
-          <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
-          Inicio
-        </a>
-      </li>
-      <li>
-        <a href="#" class="nav-link text-white">
-          <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
-          Radios
-        </a>
-      </li>
-      <li>
-        <a href="#" class="nav-link text-white">
-          <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
-          TVs
-        </a>
-      </li>
-      <li>
-        <a href="#" class="nav-link text-white">
-          <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
-          Telecomunicaciones
-        </a>
-      </li>
-    </ul>
-    <hr>
-    <div class="dropdown">
-      <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-        <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
-        <strong>Usuario</strong>
-      </a>
-      <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
-        <li><a class="dropdown-item" href="#">New project...</a></li>
-        <li><a class="dropdown-item" href="#">Settings</a></li>
-        <li><a class="dropdown-item" href="#">Profile</a></li>
-        <li><hr class="dropdown-divider"></li>
-        <li><a class="dropdown-item" href="#">Salir</a></li>
+  </div>
+  <div class="collapse navbar-collapse" id="navbarVerticalCollapse">
+    <div class="navbar-vertical-content scrollbar">
+      <ul class="navbar-nav flex-column mb-3" id="navbarVerticalNav">
+        <li class="nav-item">
+          <!-- parent pages--><a class="nav-link dropdown-indicator" href="#dashboard" role="button" data-bs-toggle="collapse" aria-expanded="true" aria-controls="dashboard">
+            <div class="d-flex align-items-center"><span class="nav-link-icon"><span class="fas fa-chart-pie"></span></span><span class="nav-link-text ps-1">Panel de Control</span>
+            </div>
+          </a>
+          <ul class="nav collapse show" id="dashboard">
+            <li class="nav-item"><a class="nav-link active" href="index.html" aria-expanded="false">
+                <div class="d-flex align-items-center"><span class="fas fa-home"></span><span class="nav-link-text ps-1">Inicio</span>
+                </div>
+              </a>
+              <!-- more inner pages-->
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="dashboard/saas.html" aria-expanded="false">
+                <div class="d-flex align-items-center"><span class="fas fa-desktop"></span></span><span class="nav-link-text ps-1">TVs</span>
+                </div>
+              </a>
+            <!-- more inner pages-->
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="dashboard/saas.html" aria-expanded="false">
+                <div class="d-flex align-items-center"><span class="fas fa-podcast"></span></span><span class="nav-link-text ps-1">Radios</span>
+                </div>
+              </a>
+            <!-- more inner pages-->
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="dashboard/saas.html" aria-expanded="false">
+                <div class="d-flex align-items-center"><span class="fas fa-signal"></span></span><span class="nav-link-text ps-1">Telecomunicaciones</span>
+                </div>
+              </a>
+            <!-- more inner pages-->
+            </li>          
+          </ul>
+        </li>
       </ul>
     </div>
   </div>
+</nav>

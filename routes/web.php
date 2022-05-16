@@ -14,6 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [ConsessionController::class, 'index'])->name('Home');
+//Route::get('/', [ConsessionController::class, 'index'])->name('Home');
+
+Route::get('/',function(){
+    return view('home.start');
+});
+
 Route::post('/insertCons', [ConsessionController::class, 'store'])->name('insertCons');
 Route::post('/searchCons', [ConsessionController::class, 'search'])->name('searchCons');
+Route::put('/editCons/{id}', [ConsessionController::class, 'update'])->name('editCons');
