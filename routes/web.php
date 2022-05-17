@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ConsessionController;
+use App\Http\Controllers\TvController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,12 +14,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/',[ConsessionController::class, 'index'])->name('Home');
 
-//Route::get('/', [ConsessionController::class, 'index'])->name('Home');
-
-Route::get('/',function(){
-    return view('home.start');
-});
+Route::get('/tv',[TvController::class, 'index'])->name('Tv.home');
 
 Route::post('/insertCons', [ConsessionController::class, 'store'])->name('insertCons');
 Route::post('/searchCons', [ConsessionController::class, 'search'])->name('searchCons');

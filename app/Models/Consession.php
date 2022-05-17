@@ -11,6 +11,12 @@ class Consession extends Model
 
     protected $fillable = [
         'name',
+        'enterprise',
+        'ruc',
+        'department',
+        'vigency',
+        'va_c',
+        'start',
         'type'
     ];
 }

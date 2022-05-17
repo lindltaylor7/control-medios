@@ -14,8 +14,8 @@ class ConsessionController extends Controller
      */
     public function index()
     {
-        $conssesions = Consession::paginate(5);
-        return view('welcome', compact('conssesions'));
+        $conssesions = Consession::orderBy('vigency','asc')->get();
+        return view('home.index', compact('conssesions'));
     }
 
     /**
@@ -37,7 +37,14 @@ class ConsessionController extends Controller
     public function store(Request $request)
     {
         $consession = Consession::create([
-            'name' => $request->get('name')
+            'name' => $request->get('name'),
+            'enterprise' => $request->get('enterprise'),
+            'ruc' => $request->get('ruc'),
+            'department' => $request->get('department'),
+            'vigency' => $request->get('vigency'),
+            'va_c' => 1,
+            'start' => $request->get('start'),
+            'type' => $request->get('type')
         ]);
         return redirect()->back();
     }

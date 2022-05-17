@@ -37,6 +37,7 @@
     <link href="{{asset('assets/css/theme.min.css')}}" rel="stylesheet" id="style-default">
     <link href="{{asset('assets/css/user-rtl.min.css')}}" rel="stylesheet" id="user-style-rtl">
     <link href="{{asset('assets/css/user.min.css')}}" rel="stylesheet" id="user-style-default">
+    <link href="{{asset('vendors/flatpickr/flatpickr.min.css')}}" rel="stylesheet" />
     <script>
       var isRTL = JSON.parse(localStorage.getItem('isRTL'));
       if (isRTL) {
@@ -267,7 +268,7 @@
     <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
     <script src="{{asset('vendors/list.js/list.min.js')}}"></script>
     <script src="{{asset('assets/js/theme.js')}}"></script>
-
+    <script src="{{asset('assets/js/flatpickr.js')}}"></script>
   </body>
 
 </html>

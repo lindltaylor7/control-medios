@@ -23,14 +23,14 @@
             </div>
           </a>
           <ul class="nav collapse show" id="dashboard">
-            <li class="nav-item"><a class="nav-link active" href="index.html" aria-expanded="false">
+            <li class="nav-item"><a class="nav-link {{(request()->is('/'))? 'active' : ''}}" href="{{route('Home')}}" aria-expanded="false">
                 <div class="d-flex align-items-center"><span class="fas fa-home"></span><span class="nav-link-text ps-1">Inicio</span>
                 </div>
               </a>
               <!-- more inner pages-->
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="dashboard/saas.html" aria-expanded="false">
+              <a class="nav-link {{(request()->is('tv'))? 'active' : ''}}" href="{{route('Tv.home')}}" aria-expanded="false">
                 <div class="d-flex align-items-center"><span class="fas fa-desktop"></span></span><span class="nav-link-text ps-1">TVs</span>
                 </div>
               </a>
